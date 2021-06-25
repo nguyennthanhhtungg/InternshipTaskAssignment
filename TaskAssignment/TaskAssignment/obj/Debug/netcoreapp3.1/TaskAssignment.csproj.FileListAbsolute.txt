@@ -61,3 +61,5 @@ D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment\bin\
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment\obj\Debug\netcoreapp3.1\TaskAssignment.csproj.CopyComplete
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
