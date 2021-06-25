@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "IFLds4UcjnIfoNwE4C3hIFV86z1w1PmU9HsGFl9/24ZQNj1OG3EnoNkxNRIrE0PTO4AzRKpVGrh5p9lyB1CT5A==",
+  "success": true,
+  "projectFilePath": "D:\\InternshipProgram\\InternshipTaskAssignment\\TaskAssignment\\TaskAssignment\\TaskAssignment.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tung Nguyen\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
+  "logs": []
+}
