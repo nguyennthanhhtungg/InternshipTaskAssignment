@@ -8,12 +8,12 @@ namespace TaskAssignment.Repositories
 {
     public interface IGenericRepository<T> where T : class
     {
-        IEnumerable<T> GetAll();
-        void Add(T entity);
-        void AddRange(IEnumerable<T> entities);
-        void Remove(T entity);
-        void RemoveRange(IEnumerable<T> entities);
-        void Update(T entity);
-        void UpdateRange(IEnumerable<T> entities);
+        Task<IEnumerable<T>> GetAll();
+        Task Add(T entity);
+        Task AddRange(IEnumerable<T> entities);
+        Task Remove(T entity);
+        Task RemoveRange(IEnumerable<T> entities);
+        Task Update(T entity);
+        Task UpdateRange(IEnumerable<T> entities);
     }
 }

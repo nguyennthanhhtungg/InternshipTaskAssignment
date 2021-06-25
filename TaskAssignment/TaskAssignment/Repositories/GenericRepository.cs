@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -16,45 +17,45 @@ namespace TaskAssignment.Repositories
             _context = context;
         }
 
-        public void Add(T entity)
+        public async Task Add(T entity)
         {
-            _context.Set<T>().Add(entity);
-            _context.SaveChanges();
+            await _context.Set<T>().AddAsync(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public void AddRange(IEnumerable<T> entities)
+        public async Task AddRange(IEnumerable<T> entities)
         {
-            _context.Set<T>().AddRange(entities);
-            _context.SaveChanges();
+            await _context.Set<T>().AddRangeAsync(entities);
+            await _context.SaveChangesAsync();
         }
 
-        public IEnumerable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
-            return _context.Set<T>().ToList();
+            return await _context.Set<T>().ToListAsync();
         }
 
-        public void Remove(T entity)
+        public async Task Remove(T entity)
         {
             _context.Set<T>().Remove(entity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void RemoveRange(IEnumerable<T> entities)
+        public async Task RemoveRange(IEnumerable<T> entities)
         {
             _context.Set<T>().RemoveRange(entities);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(T entity)
+        public async Task Update(T entity)
         {
             _context.Set<T>().Update(entity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void UpdateRange(IEnumerable<T> entities)
+        public async Task UpdateRange(IEnumerable<T> entities)
         {
             _context.Set<T>().UpdateRange(entities);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
     }
 }

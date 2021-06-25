@@ -25,30 +25,30 @@ namespace TaskAssignment.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            var employees = employeeRepository.GetAll();
+            var employees = await employeeRepository.GetAll();
 
             return Ok(employees);
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var employee = employeeRepository.GetById(id);
+            var employee = await employeeRepository.GetById(id);
 
             return Ok(employee);
         }
 
         [HttpPost]
         [Route("Registration")]
-        public IActionResult Add([FromBody] EmployeeViewModel employeeViewModel)
+        public async Task<IActionResult> Add([FromBody] EmployeeViewModel employeeViewModel)
         {
             try
             {
                 Employee employeeMapped = mapper.Map<Employee>(employeeViewModel);
 
-                employeeRepository.Add(employeeMapped);
+                await employeeRepository.Add(employeeMapped);
 
                 return Ok(employeeMapped);
             }
@@ -64,13 +64,13 @@ namespace TaskAssignment.Controllers
 
 
         [HttpPut]
-        public IActionResult Update([FromBody] EmployeeViewModel employeeViewModel)
+        public async Task<IActionResult> Update([FromBody] EmployeeViewModel employeeViewModel)
         {
             try
             {
                 Employee employeeMapped = mapper.Map<Employee>(employeeViewModel);
 
-                employeeRepository.Update(employeeMapped);
+                await employeeRepository.Update(employeeMapped);
 
                 return Ok(employeeMapped);
             }

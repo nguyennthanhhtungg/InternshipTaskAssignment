@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,9 +14,9 @@ namespace TaskAssignment.Repositories
 
         }
 
-        public Employee GetById(int id)
+        public async Task<Employee> GetById(int id)
         {
-            return _context.Set<Employee>().FirstOrDefault<Employee>(emp => emp.EmployeeId == id);
+            return await _context.Set<Employee>().Where<Employee>(emp => emp.EmployeeId == id).FirstOrDefaultAsync();
         }
     }
 }
