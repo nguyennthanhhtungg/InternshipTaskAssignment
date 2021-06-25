@@ -12,5 +12,10 @@ namespace TaskAssignment.Repositories
         {
 
         }
+
+        public Employee GetById(int id)
+        {
+            return _context.Set<Employee>().FirstOrDefault<Employee>(emp => emp.EmployeeId == id);
+        }
     }
 }

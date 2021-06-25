@@ -32,6 +32,14 @@ namespace TaskAssignment.Controllers
             return Ok(employees);
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var employee = employeeRepository.GetById(id);
+
+            return Ok(employee);
+        }
+
         [HttpPost]
         [Route("Registration")]
         public IActionResult Add([FromBody] EmployeeViewModel employeeViewModel)
@@ -46,6 +54,7 @@ namespace TaskAssignment.Controllers
             }
             catch (Exception e)
             {
+                Console.WriteLine($"Error: {e}");
                 return BadRequest(new 
                 {
                     ErrorMessage = "Employee Info is invalid!"
@@ -67,6 +76,7 @@ namespace TaskAssignment.Controllers
             }
             catch(Exception e)
             {
+                Console.WriteLine($"Error: {e}");
                 return BadRequest(new
                 {
                     ErrorMessage = "Employee Info is invalid!"

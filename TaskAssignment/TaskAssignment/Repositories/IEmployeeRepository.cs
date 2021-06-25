@@ -8,5 +8,6 @@ namespace TaskAssignment.Repositories
 {
     public interface IEmployeeRepository : IGenericRepository<Employee>
     {
+        Employee GetById(int id);
     }
 }
