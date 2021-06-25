@@ -63,3 +63,6 @@ D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment\bin\
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment\obj\Debug\netcoreapp3.1\TaskAssignment.csproj.CopyComplete
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment\bin\Debug\netcoreapp3.1\AutoMapper.dll
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

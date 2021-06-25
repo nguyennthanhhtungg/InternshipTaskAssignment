@@ -12,7 +12,7 @@ namespace TaskAssignment.Mappings
     {
         public MappingProfile()
         {
-            CreateMap<DepartmentViewModel, Department>().ReverseMap();
+            CreateMap<EmployeeViewModel, Employee>().ReverseMap();
         }
     }
 }

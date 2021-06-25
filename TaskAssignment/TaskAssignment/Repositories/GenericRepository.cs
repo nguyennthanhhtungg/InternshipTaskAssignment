@@ -19,6 +19,7 @@ namespace TaskAssignment.Repositories
         public void Add(T entity)
         {
             _context.Set<T>().Add(entity);
+            _context.SaveChanges();
         }
 
         public void AddRange(IEnumerable<T> entities)

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TaskAssignment.Models;
 using TaskAssignment.Repositories;
+using TaskAssignment.ViewModels;
 
 namespace TaskAssignment.Controllers
 {
@@ -14,10 +16,12 @@ namespace TaskAssignment.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeRepository employeeRepository;
+        private readonly IMapper mapper;
 
-        public EmployeeController(IEmployeeRepository employeeRepo)
+        public EmployeeController(IEmployeeRepository employeeRepository, IMapper mapper)
         {
-            employeeRepository = employeeRepo;
+            this.employeeRepository = employeeRepository;
+            this.mapper = mapper;
         }
 
         [HttpGet]
@@ -25,10 +29,28 @@ namespace TaskAssignment.Controllers
         {
             var employees = employeeRepository.GetAll();
 
-            return Ok(new
+            return Ok(employees);
+        }
+
+        [HttpPost]
+        [Route("Registration")]
+        public IActionResult Add([FromBody] EmployeeViewModel employeeViewModel)
+        {
+            try
             {
-                employees
-            });
+                Employee employeeMapped = mapper.Map<Employee>(employeeViewModel);
+
+                employeeRepository.Add(employeeMapped);
+
+                return Ok(employeeMapped);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new 
+                {
+                    ErrorMessage = "Employee Info is invalid!"
+                });
+            }
         }
 
     }
