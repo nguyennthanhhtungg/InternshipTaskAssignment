@@ -53,5 +53,25 @@ namespace TaskAssignment.Controllers
             }
         }
 
+
+        [HttpPut]
+        public IActionResult Update([FromBody] EmployeeViewModel employeeViewModel)
+        {
+            try
+            {
+                Employee employeeMapped = mapper.Map<Employee>(employeeViewModel);
+
+                employeeRepository.Update(employeeMapped);
+
+                return Ok(employeeMapped);
+            }
+            catch(Exception e)
+            {
+                return BadRequest(new
+                {
+                    ErrorMessage = "Employee Info is invalid!"
+                });
+            }
+        }
     }
 }

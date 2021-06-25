@@ -25,6 +25,7 @@ namespace TaskAssignment.Repositories
         public void AddRange(IEnumerable<T> entities)
         {
             _context.Set<T>().AddRange(entities);
+            _context.SaveChanges();
         }
 
         public IEnumerable<T> Find(Expression<Func<T, bool>> expression)
@@ -50,6 +51,18 @@ namespace TaskAssignment.Repositories
         public void RemoveRange(IEnumerable<T> entities)
         {
             _context.Set<T>().RemoveRange(entities);
+        }
+
+        public void Update(T entity)
+        {
+            _context.Set<T>().Update(entity);
+            _context.SaveChanges();
+        }
+
+        public void UpdateRange(IEnumerable<T> entities)
+        {
+            _context.Set<T>().UpdateRange(entities);
+            _context.SaveChanges();
         }
     }
 }
