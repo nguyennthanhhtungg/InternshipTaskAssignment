@@ -23,6 +23,11 @@ namespace TaskAssignment.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task<T> GetById(int id)
+        {
+            return await _context.Set<T>().FindAsync(id);
+        }
+
         public async Task AddRange(IEnumerable<T> entities)
         {
             await _context.Set<T>().AddRangeAsync(entities);

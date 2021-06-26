@@ -13,10 +13,5 @@ namespace TaskAssignment.Repositories
         {
 
         }
-
-        public async Task<Employee> GetById(int id)
-        {
-            return await _context.Set<Employee>().Where<Employee>(emp => emp.EmployeeId == id).FirstOrDefaultAsync();
-        }
     }
 }
