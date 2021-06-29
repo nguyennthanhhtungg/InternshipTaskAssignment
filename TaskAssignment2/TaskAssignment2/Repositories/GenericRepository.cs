@@ -1,62 +1,66 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using TaskAssignment2.Models;
 
 namespace TaskAssignment2.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        protected readonly EmployeeDBContext _context;
+        protected readonly EmployeeDBContext context;
 
         public GenericRepository(EmployeeDBContext context)
         {
-            _context = context;
+            this.context = context;
         }
 
-        public async Task Add(T entity)
+        public void Add(T entity)
         {
-            await _context.Set<T>().AddAsync(entity);
-            await _context.SaveChangesAsync();
+            context.Set<T>().Add(entity);
+            context.SaveChanges();
         }
 
-        public async Task<T> GetById(int id)
+        public T GetById(int id)
         {
-            return await _context.Set<T>().FindAsync(id);
+            return context.Set<T>().Find(id);
         }
 
-        public async Task AddRange(IEnumerable<T> entities)
+        public void AddRange(IEnumerable<T> entities)
         {
-            await _context.Set<T>().AddRangeAsync(entities);
-            await _context.SaveChangesAsync();
+            context.Set<T>().AddRange(entities);
+            context.SaveChanges();
         }
 
-        public async Task<IEnumerable<T>> GetAll()
+        public IEnumerable<T> GetAll()
         {
-            return await _context.Set<T>().ToListAsync();
+            return context.Set<T>().ToList();
         }
 
-        public async Task Remove(T entity)
+        public void Remove(T entity)
         {
-            _context.Set<T>().Remove(entity);
-            await _context.SaveChangesAsync();
+            context.Set<T>().Remove(entity);
+            context.SaveChanges();
         }
 
-        public async Task RemoveRange(IEnumerable<T> entities)
+        public void RemoveRange(IEnumerable<T> entities)
         {
-            _context.Set<T>().RemoveRange(entities);
-            await _context.SaveChangesAsync();
+            context.Set<T>().RemoveRange(entities);
+            context.SaveChanges();
         }
 
-        public async Task Update(T entity)
+        public void Update(T entity)
         {
-            _context.Set<T>().Update(entity);
-            await _context.SaveChangesAsync();
+            context.Set<T>().Update(entity);
+            context.SaveChanges();
         }
 
-        public async Task UpdateRange(IEnumerable<T> entities)
+        public void UpdateRange(IEnumerable<T> entities)
         {
-            _context.Set<T>().UpdateRange(entities);
-            await _context.SaveChangesAsync();
+            context.Set<T>().UpdateRange(entities);
+            context.SaveChanges();
         }
     }
 }
