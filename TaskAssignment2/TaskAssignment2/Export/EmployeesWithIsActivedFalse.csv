@@ -1,2 +1,0 @@
-EmployeeId,EmployeeNo,FirstName,LastName,DateOfBirth,Gender,MobileNumber,Address,Email,MarriageStatus,Nationality,IsActived,DeptId,Dept
-"54","234","","dfg nguyễn thanh tùng, sdfds, sdfsd, sdfdsaf, sdf","1/01/1999 12:00:00 AM","F","234","sdf",NULL,NULL,"Vietnam","False",NULL,NULL,
