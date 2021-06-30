@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using TaskAssignment2.Models;
 
 namespace TaskAssignment2.Repositories
@@ -13,9 +15,9 @@ namespace TaskAssignment2.Repositories
 
         }
 
-        public IList<Employee> GetAllEmployeesWithIsActivedFalse()
+        public async Task<IList<Employee>> GetAllEmployeesWithIsActivedFalse()
         {
-            var employees = context.Set<Employee>().Where(emp => emp.IsActived == false).ToList();
+            var employees = await context.Set<Employee>().Where(emp => emp.IsActived == false).ToListAsync();
 
             return employees;
         }

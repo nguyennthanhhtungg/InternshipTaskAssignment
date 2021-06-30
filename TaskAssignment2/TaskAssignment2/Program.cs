@@ -19,10 +19,9 @@ namespace TaskAssignment2
 
             RegisterServices();
             IServiceScope scope = serviceProvider.CreateScope();
-            if (args == null)
+            if (args.Length == 0)
             {
-
-                scope.ServiceProvider.GetRequiredService<IEmployeeService>().ExportEmployeesWithIsActivedFalseToCSVFile();
+                await scope.ServiceProvider.GetRequiredService<IEmployeeService>().ExportEmployeesWithIsActivedFalseToCSVFile();
             }
             else
             {

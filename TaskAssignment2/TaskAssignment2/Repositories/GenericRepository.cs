@@ -17,50 +17,50 @@ namespace TaskAssignment2.Repositories
             this.context = context;
         }
 
-        public void Add(T entity)
+        public async Task Add(T entity)
         {
-            context.Set<T>().Add(entity);
-            context.SaveChanges();
+            await context.Set<T>().AddAsync(entity);
+            await context.SaveChangesAsync();
         }
 
-        public T GetById(int id)
+        public async Task<T> GetById(int id)
         {
-            return context.Set<T>().Find(id);
+            return await context.Set<T>().FindAsync(id);
         }
 
-        public void AddRange(IEnumerable<T> entities)
+        public async Task AddRange(IEnumerable<T> entities)
         {
-            context.Set<T>().AddRange(entities);
-            context.SaveChanges();
+            await context.Set<T>().AddRangeAsync(entities);
+            await context.SaveChangesAsync();
         }
 
-        public IEnumerable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
-            return context.Set<T>().ToList();
+            return await context.Set<T>().ToListAsync();
         }
 
-        public void Remove(T entity)
+        public async Task Remove(T entity)
         {
             context.Set<T>().Remove(entity);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
-        public void RemoveRange(IEnumerable<T> entities)
+        public async Task RemoveRange(IEnumerable<T> entities)
         {
             context.Set<T>().RemoveRange(entities);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
-        public void Update(T entity)
+        public async Task Update(T entity)
         {
             context.Set<T>().Update(entity);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
-        public void UpdateRange(IEnumerable<T> entities)
+        public async Task UpdateRange(IEnumerable<T> entities)
         {
             context.Set<T>().UpdateRange(entities);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
     }
 }
