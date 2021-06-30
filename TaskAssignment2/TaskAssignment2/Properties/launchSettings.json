@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TaskAssignment2": {
+      "commandName": "Project",
+      "commandLineArgs": "http://localhost:57622/employee"
+    }
+  }
+}

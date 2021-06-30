@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using TaskAssignment2.Models;
 using TaskAssignment2.Repositories;
 
@@ -20,12 +21,12 @@ namespace TaskAssignment2.Services
             this.employeeRepository = employeeRepository;
         }
 
-        public void ExportEmployeesWithIsActivedFalseToCSVFile()
+        public async Task ExportEmployeesWithIsActivedFalseToCSVFile()
         {
             var path = ConfigurationManager.AppSettings["ExportFolderPath"];
 
             //Get all employees
-            var employeesWithIsActivedFalse = employeeRepository.GetAllEmployeesWithIsActivedFalse();
+            var employeesWithIsActivedFalse = await employeeRepository.GetAllEmployeesWithIsActivedFalse();
 
 
             var lines = new List<string>();

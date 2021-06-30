@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace TaskAssignment2.Services
 {
-    public interface IEmployeeService
+    public interface ITaskAssignment1API
     {
-        Task ExportEmployeesWithIsActivedFalseToCSVFile();
+        Task DisplayEmployeeListOnConsole(string uri);
     }
 }
