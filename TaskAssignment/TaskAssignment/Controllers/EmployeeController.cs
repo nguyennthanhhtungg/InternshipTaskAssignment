@@ -44,6 +44,14 @@ namespace TaskAssignment.Controllers
         [Route("Registration")]
         public async Task<IActionResult> Add([FromBody] EmployeeViewModel employeeViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new
+                {
+                    ErrorMessage = "Employee Info is invalid!"
+                });
+            }
+
             try
             {
                 Employee employeeMapped = mapper.Map<Employee>(employeeViewModel);
@@ -66,6 +74,14 @@ namespace TaskAssignment.Controllers
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] EmployeeViewModel employeeViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new
+                {
+                    ErrorMessage = "Employee Info is invalid!"
+                });
+            }
+
             try
             {
                 Employee employeeMapped = mapper.Map<Employee>(employeeViewModel);
