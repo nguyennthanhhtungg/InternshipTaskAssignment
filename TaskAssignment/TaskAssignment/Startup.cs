@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using TaskAssignment.Models;
 using TaskAssignment.Repositories;
+using TaskAssignment.Services;
 
 namespace TaskAssignment
 {
@@ -24,8 +25,13 @@ namespace TaskAssignment
         {
             services.AddDbContext<EmployeeDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             
+
+            //Add Repositories
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+
+            //Add Services
+            services.AddScoped<IEmployeeService, EmployeeService>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
