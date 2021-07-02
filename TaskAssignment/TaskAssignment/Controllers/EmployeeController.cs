@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TaskAssignment.Models;
 using TaskAssignment.Repositories;
+using TaskAssignment.Services;
 using TaskAssignment.ViewModels;
 
 namespace TaskAssignment.Controllers
@@ -15,19 +16,19 @@ namespace TaskAssignment.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        private readonly IEmployeeRepository employeeRepository;
+        private readonly IEmployeeService employeeService;
         private readonly IMapper mapper;
 
-        public EmployeeController(IEmployeeRepository employeeRepository, IMapper mapper)
+        public EmployeeController(IEmployeeService employeeService, IMapper mapper)
         {
-            this.employeeRepository = employeeRepository;
+            this.employeeService = employeeService;
             this.mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var employees = await employeeRepository.GetAll();
+            var employees = await employeeService.GetAll();
 
             return Ok(employees);
         }
@@ -35,7 +36,7 @@ namespace TaskAssignment.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var employee = await employeeRepository.GetById(id);
+            var employee = await employeeService.GetById(id);
 
             return Ok(employee);
         }
@@ -56,9 +57,9 @@ namespace TaskAssignment.Controllers
             {
                 Employee employeeMapped = mapper.Map<Employee>(employeeViewModel);
 
-                await employeeRepository.Add(employeeMapped);
+                var employee = await employeeService.Add(employeeMapped);
 
-                return Ok(employeeMapped);
+                return Ok(employee);
             }
             catch (Exception e)
             {
@@ -86,9 +87,9 @@ namespace TaskAssignment.Controllers
             {
                 Employee employeeMapped = mapper.Map<Employee>(employeeViewModel);
 
-                await employeeRepository.Update(employeeMapped);
+                var employee = await employeeService.Update(employeeMapped);
 
-                return Ok(employeeMapped);
+                return Ok(employee);
             }
             catch(Exception e)
             {
