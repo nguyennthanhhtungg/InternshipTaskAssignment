@@ -125,13 +125,13 @@ namespace TaskAssignment.Tests
             };
 
             //Arrange
-            mockEmployeeRepository.Setup(x => x.GetById(It.IsAny<int>()))
+            mockEmployeeRepository.Setup(x => x.GetById(1))
                 .ReturnsAsync(dummyEmployee);
 
             EmployeeController employeeController = new EmployeeController(mockEmployeeRepository.Object, mockMapper.Object);
 
             //Act
-            var result = await employeeController.GetById(It.IsAny<int>());
+            var result = await employeeController.GetById(1);
 
             //Assert
             var okObjectResult = Assert.IsType<OkObjectResult>(result);
