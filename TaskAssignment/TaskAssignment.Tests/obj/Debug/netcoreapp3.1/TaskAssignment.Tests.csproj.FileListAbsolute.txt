@@ -145,3 +145,7 @@ D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Test
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\TaskAssignment.dll
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\TaskAssignment.pdb
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
