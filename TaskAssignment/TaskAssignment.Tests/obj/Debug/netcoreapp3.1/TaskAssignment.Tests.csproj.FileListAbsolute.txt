@@ -149,3 +149,8 @@ D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Test
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore.dll
