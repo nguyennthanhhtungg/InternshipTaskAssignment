@@ -17,11 +17,13 @@ namespace TaskAssignment.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService employeeService;
+        //private readonly IEmployeeDepartmentService employeeDepartmentService;
         private readonly IMapper mapper;
 
         public EmployeeController(IEmployeeService employeeService, IMapper mapper)
         {
             this.employeeService = employeeService;
+            //this.employeeDepartmentService = employeeDepartmentService;
             this.mapper = mapper;
         }
 
@@ -36,9 +38,22 @@ namespace TaskAssignment.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var employee = await employeeService.GetById(id);
+            try
+            {
+                //Get Employee Info (include EmployeeDepartments) by EmployeeId
+                var employee = await employeeService.GetWithEmployeeDepartmentsById(id);
 
-            return Ok(employee);
+
+                return Ok(employee);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e}");
+                return BadRequest(new
+                {
+                    ErrorMessage = "EmployeeID is invalid!"
+                });
+            }
         }
 
         [HttpPost]

@@ -29,37 +29,44 @@ namespace TaskAssignment.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+            //modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
             modelBuilder.Entity<Department>(entity =>
             {
-                entity.HasKey(e => e.DeptId);
+                entity.HasKey(d => d.DeptId);
 
                 entity.ToTable("Department");
 
-                entity.Property(e => e.DeptId).HasColumnName("DeptID");
+                entity.Property(d => d.DeptId).HasColumnName("DeptID");
 
-                entity.Property(e => e.DeptLocation).HasMaxLength(50);
+                entity.Property(d => d.DeptLocation).HasMaxLength(50);
 
-                entity.Property(e => e.DeptName).HasMaxLength(100);
+                entity.Property(d => d.DeptName).HasMaxLength(100);
+
+                entity.HasMany(d => d.EmployeeDepartments)
+                    .WithOne(d => d.Department)
+                    .HasForeignKey(d => d.DeptID)
+                    .HasConstraintName("FK_Department_EmployeeDepartment");
             });
 
             modelBuilder.Entity<Employee>(entity =>
             {
+                entity.HasKey(e => e.EmployeeId);
+
                 entity.ToTable("Employee");
+
+                entity.Property(e => e.EmployeeId).HasColumnName("EmployeeId");
 
                 entity.Property(e => e.Address).HasMaxLength(200);
 
                 entity.Property(e => e.DateOfBirth).HasColumnType("datetime");
-
-                entity.Property(e => e.DeptId).HasColumnName("DeptID");
 
                 entity.Property(e => e.Email)
                     .HasMaxLength(200)
@@ -97,15 +104,45 @@ namespace TaskAssignment.Models
                     .IsUnicode(false)
                     .HasDefaultValueSql("('Vietnam')");
 
-                entity.HasOne(d => d.Dept)
-                    .WithMany(p => p.Employees)
-                    .HasForeignKey(d => d.DeptId)
-                    .HasConstraintName("FK_Employee_Department");
+                entity.HasMany(e => e.EmployeeDepartments)
+                    .WithOne(e => e.Employee)
+                    .HasForeignKey(e => e.EmployeeID)
+                    .HasConstraintName("FK_Employee_EmployeeDepartment");
             });
 
-            OnModelCreatingPartial(modelBuilder);
+            modelBuilder.Entity<EmployeeDepartment>(entity =>
+            {
+                entity.HasKey(ed => ed.ID);
+
+                entity.ToTable("EmployeeDepartment");
+
+                entity.Property(ed => ed.ID).HasColumnName("ID");
+
+                entity.Property(ed => ed.EmployeeID).IsRequired();
+
+                entity.Property(ed => ed.DeptID).IsRequired();
+
+                entity.Property(ed => ed.StartDate)
+                .IsRequired()
+                .HasColumnType("datetime");
+
+                entity.Property(ed => ed.EndDate)
+                .HasColumnType("datetime");
+
+                entity.Property(ed => ed.Description).HasColumnName("Description");
+
+                entity.HasOne(ed => ed.Department)
+                .WithMany(ed => ed.EmployeeDepartments)
+                .HasForeignKey(ed => ed.DeptID);
+
+                entity.HasOne(ed => ed.Employee)
+                .WithMany(ed => ed.EmployeeDepartments)
+                .HasForeignKey(ed => ed.EmployeeID);
+            });
+
+            //OnModelCreatingPartial(modelBuilder);
         }
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

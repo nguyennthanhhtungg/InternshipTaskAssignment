@@ -10,6 +10,9 @@ namespace TaskAssignment.Services
     {
         Task<Employee> GetById(int id);
 
+        //Get Employee Info (include EmployeeDepartment) by EmployeeId
+        Task<Employee> GetWithEmployeeDepartmentsById(int id);
+
         Task<List<Employee>> GetAll();
 
         Task<Employee> Add(Employee employee);

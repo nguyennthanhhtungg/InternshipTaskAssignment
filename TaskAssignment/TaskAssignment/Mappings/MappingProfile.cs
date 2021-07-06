@@ -13,6 +13,8 @@ namespace TaskAssignment.Mappings
         public MappingProfile()
         {
             CreateMap<EmployeeViewModel, Employee>().ReverseMap();
+            CreateMap<DepartmentViewModel, Department>().ReverseMap();
+            CreateMap<EmployeeDepartmentViewModel, EmployeeDepartment>().ReverseMap();
         }
     }
 }

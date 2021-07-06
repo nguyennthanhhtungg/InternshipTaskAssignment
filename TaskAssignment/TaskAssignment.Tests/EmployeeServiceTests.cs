@@ -38,8 +38,8 @@ namespace TaskAssignment.Tests
                 MarriageStatus = "Single",
                 Nationality = "Vietnam",
                 IsActived = true,
-                DeptId = null,
-                Dept = null
+                //DeptId = null,
+                //Dept = null
             };
 
             employeeRepositoryMock.Setup(x => x.GetById(1)).ReturnsAsync(employeeDTO);
@@ -88,8 +88,8 @@ namespace TaskAssignment.Tests
                             MarriageStatus = "Single",
                             Nationality = "Vietnam",
                             IsActived = true,
-                            DeptId = null,
-                            Dept = null
+                            //DeptId = null,
+                            //Dept = null
                         },
                         new Employee
                         {
@@ -105,8 +105,8 @@ namespace TaskAssignment.Tests
                             MarriageStatus = "Single",
                             Nationality = "Vietnam",
                             IsActived = false,
-                            DeptId = null,
-                            Dept = null
+                            //DeptId = null,
+                            //Dept = null
                         }
             };
 

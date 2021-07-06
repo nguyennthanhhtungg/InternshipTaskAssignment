@@ -32,9 +32,5 @@ namespace TaskAssignment.ViewModels
         public string Nationality { get; set; }
 
         public bool? IsActived { get; set; }
-
-        public int? DeptId { get; set; }
-
-        //public virtual DepartmentViewModel Dept { get; set; }
     }
 }
