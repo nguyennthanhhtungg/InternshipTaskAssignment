@@ -39,7 +39,7 @@ namespace TaskAssignment.Tests
                 Nationality = "Vietnam",
                 IsActived = true,
                 DeptId = null,
-                Dept = null
+                //Dept = null
             };
 
             employeeRepositoryMock.Setup(x => x.GetById(1)).ReturnsAsync(employeeDTO);
@@ -89,7 +89,7 @@ namespace TaskAssignment.Tests
                             Nationality = "Vietnam",
                             IsActived = true,
                             DeptId = null,
-                            Dept = null
+                            //Dept = null
                         },
                         new Employee
                         {
@@ -106,7 +106,7 @@ namespace TaskAssignment.Tests
                             Nationality = "Vietnam",
                             IsActived = false,
                             DeptId = null,
-                            Dept = null
+                            //Dept = null
                         }
             };
 

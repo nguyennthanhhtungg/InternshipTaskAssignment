@@ -134,13 +134,9 @@ D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Test
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\TaskAssignment.dll
@@ -154,3 +150,4 @@ D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Test
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
 D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore.dll
+D:\InternshipProgram\InternshipTaskAssignment\TaskAssignment\TaskAssignment.Tests\bin\Debug\netcoreapp3.1\HealthChecks.SqlServer.dll

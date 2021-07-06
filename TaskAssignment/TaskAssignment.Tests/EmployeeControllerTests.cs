@@ -46,7 +46,7 @@ namespace TaskAssignment.Tests
                             Nationality = "Vietnam",
                             IsActived = true,
                             DeptId = null,
-                            Dept = null
+                            //Dept = null
                         },
                         new Employee
                         {
@@ -63,7 +63,7 @@ namespace TaskAssignment.Tests
                             Nationality = "Vietnam",
                             IsActived = false,
                             DeptId = null,
-                            Dept = null
+                            //Dept = null
                         }
             };
 
@@ -124,7 +124,7 @@ namespace TaskAssignment.Tests
                 Nationality = "Vietnam",
                 IsActived = true,
                 DeptId = null,
-                Dept = null
+                //Dept = null
             };
             employeeServiceMock.Setup(x => x.GetById(employeeDTO.EmployeeId)).ReturnsAsync(employeeDTO);
 
@@ -154,7 +154,7 @@ namespace TaskAssignment.Tests
                 MarriageStatus = "Single",
                 Nationality = "Vietnam",
                 IsActived = true,
-                DeptId = null
+                //DeptId = null
             };
 
             //Arrange
@@ -200,7 +200,7 @@ namespace TaskAssignment.Tests
                 MarriageStatus = "Single",
                 Nationality = "Vietnam",
                 IsActived = true,
-                DeptId = null
+                //DeptId = null
             };
 
             //Arrange
@@ -233,7 +233,7 @@ namespace TaskAssignment.Tests
                 MarriageStatus = "Single",
                 Nationality = "Vietnam",
                 IsActived = true,
-                DeptId = null
+                //DeptId = null
             };
 
             //Arrange
@@ -281,7 +281,7 @@ namespace TaskAssignment.Tests
                 MarriageStatus = "Single",
                 Nationality = "Vietnam",
                 IsActived = true,
-                DeptId = null
+                //DeptId = null
             };
 
             //Arrange

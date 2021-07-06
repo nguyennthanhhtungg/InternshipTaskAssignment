@@ -5,17 +5,19 @@ using System.Collections.Generic;
 
 namespace TaskAssignment.Models
 {
-    public partial class Department
+    public class Department
     {
-        public Department()
-        {
-            Employees = new HashSet<Employee>();
-        }
+        //public Department()
+        //{
+        //    EmployeeDepartments = new HashSet<EmployeeDepartments>();
+        //}
 
         public int DeptId { get; set; }
+
         public string DeptName { get; set; }
+
         public string DeptLocation { get; set; }
 
-        public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<EmployeeDepartment> EmployeeDepartments { get; set; }
     }
 }
