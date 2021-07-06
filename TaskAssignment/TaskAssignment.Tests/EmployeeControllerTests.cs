@@ -126,7 +126,7 @@ namespace TaskAssignment.Tests
                 //DeptId = null,
                 //Dept = null
             };
-            employeeServiceMock.Setup(x => x.GetById(employeeDTO.EmployeeId)).ReturnsAsync(employeeDTO);
+            employeeServiceMock.Setup(x => x.GetWithEmployeeDepartmentsById(employeeDTO.EmployeeId)).ReturnsAsync(employeeDTO);
 
             //Act
             var result = await employeeController.GetById(employeeDTO.EmployeeId);
