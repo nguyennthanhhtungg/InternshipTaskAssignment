@@ -8,5 +8,10 @@ namespace TaskAssignment.Repositories
 {
     public interface IEmployeeDepartmentRepository : IGenericRepository<EmployeeDepartment>
     {
+        Task<EmployeeDepartment> GetLastestEmployeeDepartmentByEmployeeId(int employeeId);
+
+        Task<EmployeeDepartment> GetLastestCompletedEmployeeDepartmentByEmployeeId(int employeeId);
+
+        Task<List<EmployeeDepartment>> GetEmployeeDepartmentListByEmployeeId(int employeeId);
     }
 }

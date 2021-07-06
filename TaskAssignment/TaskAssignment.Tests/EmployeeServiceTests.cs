@@ -38,7 +38,7 @@ namespace TaskAssignment.Tests
                 MarriageStatus = "Single",
                 Nationality = "Vietnam",
                 IsActived = true,
-                DeptId = null,
+                //DeptId = null,
                 //Dept = null
             };
 
@@ -88,7 +88,7 @@ namespace TaskAssignment.Tests
                             MarriageStatus = "Single",
                             Nationality = "Vietnam",
                             IsActived = true,
-                            DeptId = null,
+                            //DeptId = null,
                             //Dept = null
                         },
                         new Employee
@@ -105,7 +105,7 @@ namespace TaskAssignment.Tests
                             MarriageStatus = "Single",
                             Nationality = "Vietnam",
                             IsActived = false,
-                            DeptId = null,
+                            //DeptId = null,
                             //Dept = null
                         }
             };

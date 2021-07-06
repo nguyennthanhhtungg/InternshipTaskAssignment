@@ -68,8 +68,6 @@ namespace TaskAssignment.Models
 
                 entity.Property(e => e.DateOfBirth).HasColumnType("datetime");
 
-                entity.Property(e => e.DeptId).HasColumnName("DeptID");
-
                 entity.Property(e => e.Email)
                     .HasMaxLength(200)
                     .IsUnicode(false);

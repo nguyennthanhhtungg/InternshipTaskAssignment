@@ -31,8 +31,6 @@ namespace TaskAssignment.Models
 
         public bool? IsActived { get; set; }
 
-        public int? DeptId { get; set; }
-
         public virtual ICollection<EmployeeDepartment> EmployeeDepartments { get; set; }
     }
 }

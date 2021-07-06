@@ -45,7 +45,7 @@ namespace TaskAssignment.Tests
                             MarriageStatus = "Single",
                             Nationality = "Vietnam",
                             IsActived = true,
-                            DeptId = null,
+                            //DeptId = null,
                             //Dept = null
                         },
                         new Employee
@@ -62,7 +62,7 @@ namespace TaskAssignment.Tests
                             MarriageStatus = "Single",
                             Nationality = "Vietnam",
                             IsActived = false,
-                            DeptId = null,
+                            //DeptId = null,
                             //Dept = null
                         }
             };
@@ -123,7 +123,7 @@ namespace TaskAssignment.Tests
                 MarriageStatus = "Single",
                 Nationality = "Vietnam",
                 IsActived = true,
-                DeptId = null,
+                //DeptId = null,
                 //Dept = null
             };
             employeeServiceMock.Setup(x => x.GetById(employeeDTO.EmployeeId)).ReturnsAsync(employeeDTO);
@@ -184,7 +184,7 @@ namespace TaskAssignment.Tests
                 MarriageStatus = "Single",
                 Nationality = "Vietnam",
                 IsActived = true,
-                DeptId = null
+                //DeptId = null
             };
 
             var employeeViewModel = new EmployeeViewModel
@@ -264,7 +264,7 @@ namespace TaskAssignment.Tests
                 MarriageStatus = "Single",
                 Nationality = "Vietnam",
                 IsActived = true,
-                DeptId = null
+                //DeptId = null
             };
 
             var employeeViewModel = new EmployeeViewModel

@@ -34,6 +34,12 @@ namespace TaskAssignment.Services
             return employee;
         }
 
+        //Get Employee Info (include EmployeeDepartments) by EmployeeId
+        public async Task<Employee> GetWithEmployeeDepartmentsById(int id)
+        {
+            return await employeeRepository.GetWithEmployeeDepartmentsById(id);
+        }
+
         public async Task<Employee> Update(Employee employee)
         {
             await employeeRepository.Update(employee);

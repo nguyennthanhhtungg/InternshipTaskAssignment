@@ -13,5 +13,11 @@ namespace TaskAssignment.Repositories
         {
 
         }
+
+        //Get Employee Info (include EmployeeDepartments) by EmployeeId
+        public async Task<Employee> GetWithEmployeeDepartmentsById(int id)
+        {
+            return await _context.Set<Employee>().Where<Employee>(emp => emp.EmployeeId == id).Include(emp => emp.EmployeeDepartments).FirstOrDefaultAsync();
+        }
     }
 }
