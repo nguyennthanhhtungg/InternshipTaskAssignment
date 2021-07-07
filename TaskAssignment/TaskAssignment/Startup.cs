@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using System;
 using System.Linq;
+using TaskAssignment.HealthChecks;
 using TaskAssignment.Models;
 using TaskAssignment.Repositories;
 using TaskAssignment.Services;
@@ -50,8 +51,9 @@ namespace TaskAssignment
 
             //Health Checks
             services.AddHealthChecks()
-                .AddSqlServer(Configuration["ConnectionStrings:DefaultConnection"])
-                .AddDbContextCheck<EmployeeDBContext>();
+                //.AddSqlServer(Configuration["ConnectionStrings:DefaultConnection"])
+                //.AddDbContextCheck<EmployeeDBContext>()
+                .AddCheck<CustomHealthCheck>(name: "Customn Health Check");
 
             services.AddSwaggerGen(swagger =>
             {
