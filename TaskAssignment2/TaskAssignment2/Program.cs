@@ -54,7 +54,7 @@ namespace TaskAssignment2
         //Dispose Services
         private static void DisposeServices()
         {
-            if(serviceProvider == null)
+            if (serviceProvider == null)
             {
                 return;
             }
