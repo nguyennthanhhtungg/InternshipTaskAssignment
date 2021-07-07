@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using TaskAssignment.Models;
 using TaskAssignment.Services;
@@ -56,7 +54,7 @@ namespace TaskAssignment.Controllers
 
                 var employeeDepartment = await employeeDepartmentService.Add(employeeDepartmentMapped);
 
-                if(employeeDepartment != null)
+                if (employeeDepartment != null)
                 {
                     return Ok(employeeDepartment);
                 }

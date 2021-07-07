@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace TaskAssignment.CustomValidations
 {
@@ -12,7 +9,7 @@ namespace TaskAssignment.CustomValidations
         {
             DateTime dateTime = Convert.ToDateTime(value);
 
-            if(value == null || DateTime.Now.AddYears(-18).CompareTo(dateTime) >= 0)
+            if (value == null || DateTime.Now.AddYears(-18).CompareTo(dateTime) >= 0)
             {
                 return ValidationResult.Success;
             }

@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using TaskAssignment.Controllers;
 using TaskAssignment.Models;
