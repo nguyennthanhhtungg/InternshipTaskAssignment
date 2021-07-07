@@ -1,19 +1,14 @@
-﻿using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
+﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+
+using System.Data.SqlClient;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace TaskAssignment.HealthChecks
+namespace CustomHealthCheck
 {
-    public class CustomHealthCheck : IHealthCheck
+    public class CustomSqlServerHealthCheck : IHealthCheck
     {
-
-        IConfigurationRoot configuration = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").Build();
-
         public Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)
         {
             bool isDBConnection = IsDBConnection();
@@ -27,10 +22,13 @@ namespace TaskAssignment.HealthChecks
 
         private bool IsDBConnection()
         {
+            string connectionString = "Data Source=DESKTOP-401OUEF\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
+
             try
             {
-                using (SqlConnection connection = new SqlConnection(configuration.GetConnectionString("DefaultConnection")))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+
                     if (connection.State != System.Data.ConnectionState.Open)
                     {
                         connection.Open();
@@ -38,8 +36,10 @@ namespace TaskAssignment.HealthChecks
                 }
                 return true;
             }
-            catch (System.Exception)
+            catch (System.Exception e)
             {
+                Console.WriteLine("Errors");
+                Console.WriteLine(e);
                 return false;
             }
         }
