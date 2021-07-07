@@ -1,12 +1,8 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using TaskAssignment.Models;
-using TaskAssignment.Repositories;
 using TaskAssignment.Services;
 using TaskAssignment.ViewModels;
 
@@ -17,13 +13,11 @@ namespace TaskAssignment.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService employeeService;
-        //private readonly IEmployeeDepartmentService employeeDepartmentService;
         private readonly IMapper mapper;
 
         public EmployeeController(IEmployeeService employeeService, IMapper mapper)
         {
             this.employeeService = employeeService;
-            //this.employeeDepartmentService = employeeDepartmentService;
             this.mapper = mapper;
         }
 
@@ -79,7 +73,7 @@ namespace TaskAssignment.Controllers
             catch (Exception e)
             {
                 Console.WriteLine($"Error: {e}");
-                return BadRequest(new 
+                return BadRequest(new
                 {
                     ErrorMessage = "Employee Info is invalid!"
                 });
@@ -106,7 +100,7 @@ namespace TaskAssignment.Controllers
 
                 return Ok(employee);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine($"Error: {e}");
                 return BadRequest(new

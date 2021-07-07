@@ -1,15 +1,12 @@
 using CustomHealthCheck;
+using CustomHealthChecks.ConfigureExtensions;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Newtonsoft.Json;
 using System;
-using System.Linq;
 using TaskAssignment.Models;
 using TaskAssignment.Repositories;
 using TaskAssignment.Services;
@@ -29,7 +26,7 @@ namespace TaskAssignment
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<EmployeeDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
-            
+
 
             //Add Repositories
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
@@ -81,26 +78,8 @@ namespace TaskAssignment
                 endpoints.MapControllers();
             });
 
-
-            app.UseHealthChecks("/healthcheck", new HealthCheckOptions
-            {
-                ResponseWriter = async (context, report) =>
-                {
-                    context.Response.ContentType = "application/json";
-                    var response = new HealthCheckReponse
-                    {
-                        Status = report.Status.ToString(),
-                        HealthChecks = report.Entries.Select(x => new IndividualHealthCheckResponse()
-                        {
-                            Component = x.Key,
-                            Status = x.Value.Status.ToString(),
-                            Description = x.Value.Description
-                        }),
-                        HealthCheckDuration = report.TotalDuration
-                    };
-                    await context.Response.WriteAsync(JsonConvert.SerializeObject(response));
-                }
-            });
+            //Health Checks
+            app.UseCustomHealthChecks();
 
 
             app.UseSwagger();

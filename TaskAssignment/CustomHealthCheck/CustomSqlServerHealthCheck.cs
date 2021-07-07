@@ -1,6 +1,5 @@
-﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
-using System;
-
+﻿using System;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Data.SqlClient;
 using System.Threading;
 using System.Threading.Tasks;
@@ -38,8 +37,7 @@ namespace CustomHealthCheck
             }
             catch (System.Exception e)
             {
-                Console.WriteLine("Errors");
-                Console.WriteLine(e);
+                Console.WriteLine($"Error: {e}");
                 return false;
             }
         }

@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using TaskAssignment.Controllers;
 using TaskAssignment.Models;
-using TaskAssignment.Repositories;
 using TaskAssignment.Services;
 using TaskAssignment.ViewModels;
 using Xunit;
