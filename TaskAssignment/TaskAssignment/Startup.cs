@@ -1,4 +1,4 @@
-using CustomHealthCheck;
+using CustomHealthChecks;
 using CustomHealthChecks.ConfigureExtensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -48,7 +48,8 @@ namespace TaskAssignment
 
             //Health Checks
             services.AddHealthChecks()
-                .AddCheck<CustomSqlServerHealthCheck>(name: "Customn Sql Server Health Check");
+                .AddTypeActivatedCheck<CustomSqlServerHealthCheck>(name: "Customn Sql Server Health Check", args: new object[] { Configuration["ConnectionStrings:DefaultConnection"] })
+                .AddTypeActivatedCheck<CustomUrlHealthCheck>(name: "Custom Url Health Check", args: "http://localhost:57622/Swagger/index.html");
 
             services.AddSwaggerGen(swagger =>
             {

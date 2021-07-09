@@ -4,10 +4,17 @@ using System.Data.SqlClient;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CustomHealthCheck
+namespace CustomHealthChecks
 {
     public class CustomSqlServerHealthCheck : IHealthCheck
     {
+        private string connectionString { get; set; }
+
+        public CustomSqlServerHealthCheck(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
+
         public Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)
         {
             bool isDBConnection = IsDBConnection();
@@ -21,8 +28,6 @@ namespace CustomHealthCheck
 
         private bool IsDBConnection()
         {
-            string connectionString = "Data Source=DESKTOP-401OUEF\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
