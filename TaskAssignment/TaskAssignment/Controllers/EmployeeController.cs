@@ -24,7 +24,9 @@ namespace TaskAssignment.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
+
             var employees = await employeeService.GetAll();
+            await Task.Delay(TimeSpan.FromSeconds(10));
 
             return Ok(employees);
         }

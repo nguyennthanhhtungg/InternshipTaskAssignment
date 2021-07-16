@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p65c4TqB83hCY4O16EN5qOlhD3511WkzZ3wZr5gEcMB1daBZoqFBpQVemTpIfDNTHRHt/VobtcoNFwPbqbxuoA==",
+  "dgSpecHash": "dYOkO2mU8khSbSGbi96XFzaD9kSV+MYPhXCrtffKxZ2iuaoL9WKjAkv/PfTjZ7EpFxrcFSH6eOujV0fO4ApMbQ==",
   "success": true,
   "projectFilePath": "D:\\InternshipProgram\\InternshipTaskAssignment\\TaskAssignment\\TaskAssignment\\TaskAssignment.csproj",
   "expectedPackageFiles": [
@@ -50,6 +50,7 @@
     "C:\\Users\\Tung Nguyen\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Tung Nguyen\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Tung Nguyen\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\Tung Nguyen\\.nuget\\packages\\newtonsoft.json.schema\\3.0.14\\newtonsoft.json.schema.3.0.14.nupkg.sha512",
     "C:\\Users\\Tung Nguyen\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Tung Nguyen\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Tung Nguyen\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
