@@ -2787,7 +2787,10 @@
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.16",
           "Microsoft.EntityFrameworkCore": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
+<<<<<<< HEAD
           "Newtonsoft.Json": "13.0.1",
+=======
+>>>>>>> ShopOnline
           "Newtonsoft.Json.Schema": "3.0.14",
           "Swashbuckle.AspNetCore": "6.1.4"
         },

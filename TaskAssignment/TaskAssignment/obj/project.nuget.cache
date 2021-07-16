@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "UvchQMoK5IY/NuAO39tQ6TOtk1Hygl16cDLBUw5YrRCB5hzqsjWegfUNfVl11Yctv+WyuzE/z8SEK63C3goHrA==",
+=======
+  "dgSpecHash": "dYOkO2mU8khSbSGbi96XFzaD9kSV+MYPhXCrtffKxZ2iuaoL9WKjAkv/PfTjZ7EpFxrcFSH6eOujV0fO4ApMbQ==",
+>>>>>>> ShopOnline
   "success": true,
   "projectFilePath": "D:\\InternshipProgram\\InternshipTaskAssignment\\TaskAssignment\\TaskAssignment\\TaskAssignment.csproj",
   "expectedPackageFiles": [

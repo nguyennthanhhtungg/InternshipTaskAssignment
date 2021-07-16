@@ -31,7 +31,10 @@
           "Microsoft.EntityFrameworkCore.Design": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.7",
+<<<<<<< HEAD
           "Newtonsoft.Json": "13.0.1",
+=======
+>>>>>>> ShopOnline
           "Newtonsoft.Json.Schema": "3.0.14",
           "Swashbuckle.AspNetCore": "6.1.4",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",

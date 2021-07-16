@@ -152,10 +152,13 @@
               "target": "Package",
               "version": "[5.0.7, )"
             },
+<<<<<<< HEAD
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
             },
+=======
+>>>>>>> ShopOnline
             "Newtonsoft.Json.Schema": {
               "target": "Package",
               "version": "[3.0.14, )"
